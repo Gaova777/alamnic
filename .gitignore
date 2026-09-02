@@ -1,0 +1,11 @@
+# Material fuente (no se publica)
+extracted/
+*.docx
+
+# Sistema / editores
+.DS_Store
+Thumbs.db
+desktop.ini
+node_modules/
+.vercel
+*.log
