@@ -6,26 +6,20 @@
 <title>ALAMBIC · Aromaterapia artesanal y bienestar consciente</title>
 <meta name="description" content="Aceites esenciales 100% puros, roll-ons y experiencias de bienestar. Destilación artesanal en alambique de cobre. Roldanillo, Valle del Cauca, Colombia." />
 <meta name="theme-color" content="#241812" />
-
-<!-- Open Graph -->
 <meta property="og:title" content="ALAMBIC · Recuerda tu esencia" />
 <meta property="og:description" content="Más que aceites esenciales: conocimiento y experiencias sensoriales para tu bienestar." />
 <meta property="og:image" content="assets/img/grupo-productos.jpg" />
 <meta property="og:type" content="website" />
-
 <link rel="icon" href="assets/img/logo.jpg" />
 <link rel="apple-touch-icon" href="assets/img/logo.jpg" />
-
-<!-- Fuentes -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Nunito+Sans:ital,opsz,wght@0,6..12,300;0,6..12,400;0,6..12,600;0,6..12,700;0,6..12,800;0,6..12,900&display=swap" rel="stylesheet" />
-
 <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
 
-<!-- ============ HEADER ============ -->
+<!-- HEADER -->
 <header class="header" id="header">
   <div class="container nav">
     <a href="#inicio" class="brand" aria-label="ALAMBIC inicio">
@@ -35,7 +29,7 @@
     <nav class="nav-links" id="navLinks">
       <a href="#inicio">Inicio</a>
       <a href="#esencia">Nuestra Esencia</a>
-      <a href="#tienda">Tienda</a>
+      <a href="tienda.html">Tienda</a>
       <a href="#experiencias">Experiencias</a>
       <a href="#testimonios">Testimonios</a>
       <a href="#faq">FAQ</a>
@@ -51,41 +45,52 @@
         <span class="cart-count" id="cartCount">0</span>
       </button>
       <button class="hamburger" id="hamburger" aria-label="Menú">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
     </div>
   </div>
 </header>
 
-<!-- ============ HERO ============ -->
+<!-- HERO PREMIUM -->
 <section class="hero" id="inicio">
-  <div class="hero-bg" id="heroBg">
-    <div class="hero-slide" style="background-image:url('assets/img/alambique-studio.jpg')"></div>
-    <div class="hero-slide" style="background-image:url('assets/img/aura-cosecha.jpg')"></div>
-    <div class="hero-slide" style="background-image:url('assets/img/ace-lavanda.jpg')"></div>
-    <div class="hero-slide" style="background-image:url('assets/img/exp-montana.jpg')"></div>
-  </div>
-  <div class="hero-veil"></div>
+  <div class="hero-amb"></div>
   <div class="hero-grain"></div>
   <div class="hero-motes" id="heroMotes"></div>
-
   <div class="container hero-inner">
-    <img src="assets/img/logo.jpg" alt="ALAMBIC" class="hero-mark" />
-    <span class="eyebrow on-dark">Aromaterapia artesanal · Colombia</span>
-    <h1>Recuerda tu esencia a través del <em>poder de la naturaleza</em>.</h1>
-    <p class="hero-sub">Más que aceites esenciales, brindamos conocimiento y experiencias sensoriales para acompañarte en tu bienestar físico, emocional, mental y energético.</p>
-    <div class="hero-cta">
-      <a href="#tienda" class="btn btn-gold">Explorar productos y servicios</a>
-      <a href="#" class="btn btn-outline js-wa">
-        <svg class="wa-ico" viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.2-1.8-.9-2-1s-.5-.2-.7.1-.8 1-1 1.2-.4.2-.7.1a8.2 8.2 0 0 1-2.4-1.5 9 9 0 0 1-1.7-2.1c-.2-.3 0-.5.1-.6l.5-.6.3-.5a.5.5 0 0 0 0-.5L8.7 6.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3A2.8 2.8 0 0 0 6 9a5 5 0 0 0 1 2.6 11.4 11.4 0 0 0 4.4 3.9c2 .9 2 .6 2.4.6a2.5 2.5 0 0 0 1.6-1.2 2 2 0 0 0 .2-1.1c-.1-.1-.3-.2-.6-.4zM12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.3A10 10 0 1 0 12 2z"/></svg>
-        Escríbenos por WhatsApp
-      </a>
+    <div class="hero-copy">
+      <span class="eyebrow on-dark">Aromaterapia artesanal · Colombia</span>
+      <h1><span style="animation-delay:.15s">Recuerda</span> <span style="animation-delay:.28s">tu</span> <span style="animation-delay:.41s">esencia</span> <span style="animation-delay:.54s">a</span> <span style="animation-delay:.63s">través</span> <span style="animation-delay:.72s">del</span> <em><span style="animation-delay:.85s">poder</span> <span style="animation-delay:.95s">de</span> <span style="animation-delay:1.03s">la</span> <span style="animation-delay:1.12s">naturaleza.</span></em></h1>
+      <p class="hero-sub">Más que aceites esenciales, brindamos conocimiento y experiencias sensoriales para acompañarte en tu bienestar físico, emocional, mental y energético.</p>
+      <div class="hero-cta">
+        <a href="tienda.html" class="btn btn-gold">Explorar la tienda</a>
+        <a href="#" class="btn btn-outline js-wa">
+          <svg class="wa-ico" viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.2-1.8-.9-2-1s-.5-.2-.7.1-.8 1-1 1.2-.4.2-.7.1a8.2 8.2 0 0 1-2.4-1.5 9 9 0 0 1-1.7-2.1c-.2-.3 0-.5.1-.6l.5-.6.3-.5a.5.5 0 0 0 0-.5L8.7 6.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3A2.8 2.8 0 0 0 6 9a5 5 0 0 0 1 2.6 11.4 11.4 0 0 0 4.4 3.9c2 .9 2 .6 2.4.6a2.5 2.5 0 0 0 1.6-1.2 2 2 0 0 0 .2-1.1c-.1-.1-.3-.2-.6-.4zM12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.3A10 10 0 1 0 12 2z"/></svg>
+          Escríbenos por WhatsApp
+        </a>
+      </div>
+      <div class="hero-notes">
+        <span class="qnote"><svg viewBox="0 0 24 24"><path d="M11 3C7 3 4 6 4 10c0 5 5 9 8 11 3-2 8-6 8-11 0-4-3-7-7-7a5 5 0 0 0-1 .1A5 5 0 0 0 11 3z"/></svg>100% Puro</span>
+        <span class="qnote"><svg viewBox="0 0 24 24"><path d="M12 3s5 4 5 9a5 5 0 0 1-10 0c0-2 1-3 2-4 0 1 1 2 2 2 0-3-1-5 1-7z"/></svg>Destilación artesanal</span>
+        <span class="qnote"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Origen trazable</span>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-glow"></div>
+      <div class="hero-frame" id="heroFrame">
+        <img src="assets/img/alambique-studio.jpg" alt="Alambique de cobre artesanal de ALAMBIC" />
+      </div>
+      <div class="hero-card">
+        <div class="hc-top">Notas de la casa</div>
+        <h4>Lavanda</h4>
+        <p>Floral · Suave · Balsámico<br>Calma & descanso</p>
+      </div>
     </div>
   </div>
   <div class="scroll-cue">Desliza<span></span></div>
 </section>
 
-<!-- ============ NUESTRA ESENCIA ============ -->
+<!-- NUESTRA ESENCIA -->
 <section class="section esencia" id="esencia">
   <div class="container">
     <div class="section-head center reveal">
@@ -94,27 +99,13 @@
       <p class="lead">Integramos naturaleza, ciencia y espiritualidad para crear productos y experiencias con propósito.</p>
     </div>
     <div class="pillars">
-      <article class="pillar reveal">
-        <div class="pillar-ico">🌿</div>
-        <h3>Amor por la naturaleza</h3>
-        <p>Respetamos cada etapa del proceso, desde la siembra y la cosecha hasta la destilación, buscando conservar la esencia de cada planta.</p>
-      </article>
-      <article class="pillar reveal">
-        <div class="pillar-ico">🧪</div>
-        <h3>Ciencia y tradición</h3>
-        <p>Integramos el conocimiento botánico, la destilación artesanal y el uso responsable de los aceites esenciales para ofrecer productos de alta calidad.</p>
-      </article>
-      <article class="pillar reveal">
-        <div class="pillar-ico">✨</div>
-        <h3>Bienestar consciente</h3>
-        <p>Además de productos, creamos experiencias que invitan al autocuidado y a la presencia.</p>
-      </article>
+      <article class="pillar reveal"><div class="pillar-ico">🌿</div><h3>Amor por la naturaleza</h3><p>Respetamos cada etapa del proceso, desde la siembra y la cosecha hasta la destilación, buscando conservar la esencia de cada planta.</p></article>
+      <article class="pillar reveal"><div class="pillar-ico">🧪</div><h3>Ciencia y tradición</h3><p>Integramos el conocimiento botánico, la destilación artesanal y el uso responsable de los aceites esenciales para ofrecer productos de alta calidad.</p></article>
+      <article class="pillar reveal"><div class="pillar-ico">✨</div><h3>Bienestar consciente</h3><p>Además de productos, creamos experiencias que invitan al autocuidado y a la presencia.</p></article>
     </div>
-
-    <!-- Quiénes somos -->
     <div class="split reverse reveal">
       <div class="split-media">
-        <img src="assets/img/alambique-studio.jpg" alt="Alambique de cobre artesanal de ALAMBIC" />
+        <img src="assets/img/aura-destilacion.jpg" alt="Destilación artesanal en alambique de cobre" />
         <span class="badge">Destilación<br>artesanal</span>
       </div>
       <div class="split-body">
@@ -127,7 +118,7 @@
   </div>
 </section>
 
-<!-- ============ SOBRE AURA ============ -->
+<!-- SOBRE AURA -->
 <section class="section aura">
   <div class="container">
     <div class="split reveal">
@@ -146,30 +137,22 @@
   </div>
 </section>
 
-<!-- ============ TIENDA ============ -->
-<section class="section tienda" id="tienda">
+<!-- COLECCIÓN (enlaza a la tienda) -->
+<section class="section coleccion">
   <div class="container">
     <div class="section-head center reveal">
-      <span class="eyebrow">Tienda</span>
+      <span class="eyebrow">La colección</span>
       <h2>¿Cómo podemos acompañarte?</h2>
-      <p class="lead">Productos para incorporar la aromaterapia en tu día a día. Escoge tus favoritos y consúltanos por WhatsApp.</p>
+      <p class="lead">Aceites esenciales 100% puros y roll-ons listos para usar. Escoge tus aromas y la cantidad en la tienda.</p>
     </div>
-
-    <div class="filters reveal" id="filters">
-      <button class="filter active" data-filter="all">Todo</button>
-      <button class="filter" data-filter="aceites">Aceites esenciales</button>
-      <button class="filter" data-filter="rollons">Roll-ons</button>
-      <button class="filter" data-filter="soon">Próximamente</button>
+    <div class="feat-gallery reveal" id="featGallery"></div>
+    <div class="coleccion-cta reveal">
+      <a href="tienda.html" class="btn btn-emerald">Ver toda la tienda →</a>
     </div>
-
-    <div class="grid" id="productGrid"></div>
-
-    <!-- Próximamente -->
-    <div class="soon-grid" id="soonGrid"></div>
   </div>
 </section>
 
-<!-- ============ EXPERIENCIAS ============ -->
+<!-- EXPERIENCIAS -->
 <section class="section experiencias" id="experiencias">
   <div class="container">
     <div class="section-head center reveal">
@@ -181,7 +164,7 @@
   </div>
 </section>
 
-<!-- ============ TESTIMONIOS ============ -->
+<!-- TESTIMONIOS -->
 <section class="section testimonios" id="testimonios">
   <div class="container">
     <div class="section-head center reveal">
@@ -192,7 +175,7 @@
   </div>
 </section>
 
-<!-- ============ FAQ ============ -->
+<!-- FAQ -->
 <section class="section faq" id="faq">
   <div class="container">
     <div class="section-head center reveal">
@@ -203,7 +186,7 @@
   </div>
 </section>
 
-<!-- ============ CONTACTO / CTA ============ -->
+<!-- CTA -->
 <section class="section cta" id="contacto">
   <div class="container reveal">
     <span class="eyebrow on-dark">Contacto</span>
@@ -214,12 +197,12 @@
         <svg class="wa-ico" viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.2-1.8-.9-2-1s-.5-.2-.7.1-.8 1-1 1.2-.4.2-.7.1a8.2 8.2 0 0 1-2.4-1.5 9 9 0 0 1-1.7-2.1c-.2-.3 0-.5.1-.6l.5-.6.3-.5a.5.5 0 0 0 0-.5L8.7 6.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3A2.8 2.8 0 0 0 6 9a5 5 0 0 0 1 2.6 11.4 11.4 0 0 0 4.4 3.9c2 .9 2 .6 2.4.6a2.5 2.5 0 0 0 1.6-1.2 2 2 0 0 0 .2-1.1c-.1-.1-.3-.2-.6-.4zM12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.3A10 10 0 1 0 12 2z"/></svg>
         Escríbenos por WhatsApp
       </a>
-      <a href="#tienda" class="btn btn-outline">Ver productos</a>
+      <a href="tienda.html" class="btn btn-outline">Ver productos</a>
     </div>
   </div>
 </section>
 
-<!-- ============ FOOTER ============ -->
+<!-- FOOTER -->
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
@@ -234,7 +217,7 @@
       <div class="footer-nav">
         <h4>Explora</h4>
         <a href="#esencia">Nuestra Esencia</a>
-        <a href="#tienda">Tienda</a>
+        <a href="tienda.html">Tienda</a>
         <a href="#experiencias">Experiencias</a>
         <a href="#faq">Preguntas frecuentes</a>
       </div>
@@ -253,14 +236,12 @@
   </div>
 </footer>
 
-<!-- ============ CARRITO ============ -->
+<!-- CARRITO -->
 <div class="overlay" id="overlay"></div>
 <aside class="cart" id="cart" aria-label="Carrito de consulta">
   <div class="cart-head">
     <h3>Tu selección</h3>
-    <button class="cart-close" id="cartClose" aria-label="Cerrar">
-      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>
-    </button>
+    <button class="cart-close" id="cartClose" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
   </div>
   <div class="cart-items" id="cartItems"></div>
   <div class="cart-foot">
@@ -275,18 +256,19 @@
   </div>
 </aside>
 
-<!-- ============ WHATSAPP FLOTANTE ============ -->
+<!-- WHATSAPP FLOTANTE -->
 <a href="#" class="wa-float js-wa" aria-label="WhatsApp">
   <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.2-1.8-.9-2-1s-.5-.2-.7.1-.8 1-1 1.2-.4.2-.7.1a8.2 8.2 0 0 1-2.4-1.5 9 9 0 0 1-1.7-2.1c-.2-.3 0-.5.1-.6l.5-.6.3-.5a.5.5 0 0 0 0-.5L8.7 6.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3A2.8 2.8 0 0 0 6 9a5 5 0 0 0 1 2.6 11.4 11.4 0 0 0 4.4 3.9c2 .9 2 .6 2.4.6a2.5 2.5 0 0 0 1.6-1.2 2 2 0 0 0 .2-1.1c-.1-.1-.3-.2-.6-.4zM12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.3A10 10 0 1 0 12 2z"/></svg>
 </a>
 
-<!-- ============ TOAST ============ -->
+<!-- TOAST -->
 <div class="toast" id="toast">
   <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
   <span id="toastMsg">Añadido a tu selección</span>
 </div>
 
 <script src="assets/js/data.js"></script>
-<script src="assets/js/app.js"></script>
+<script src="assets/js/cart.js"></script>
+<script src="assets/js/home.js"></script>
 </body>
 </html>
