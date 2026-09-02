@@ -130,7 +130,7 @@
     $("#checkoutBtn")?.addEventListener("click", () => {
       const items = Object.entries(cart);
       if (!items.length) return;
-      let msg = `¡Hola ALAMBIC! 🌿 Quiero hacer un pedido:%0A%0A`;
+      let msg = `¡Hola ALAMBIC! Quiero hacer un pedido:%0A%0A`;
       items.forEach(([id, q]) => {
         const p = findProduct(id);
         if (p) msg += `• ${q} × ${p.nombre} (${p.tag}, ${p.medida})%0A`;
@@ -142,7 +142,7 @@
 
   /* ---------- Enlaces WhatsApp base + footer + nav + header ---------- */
   function initChrome() {
-    const baseMsg = `¡Hola ALAMBIC! 🌿 Vengo desde su página web y me gustaría recibir más información.`;
+    const baseMsg = `¡Hola ALAMBIC! Vengo desde su página web y me gustaría recibir más información.`;
     $$(".js-wa").forEach((a) => (a.href = waLink(baseMsg)));
     const navWa = $("#navWa"); if (navWa) navWa.href = waLink(baseMsg);
 
@@ -193,7 +193,7 @@
   window.ALAMBIC = {
     data: D, allProducts, findProduct, waLink,
     add, setQty, renderCart,
-    productWa: (p, qty = 1) => waLink(`¡Hola ALAMBIC! 🌿 Me interesa ${qty > 1 ? qty + " × " : ""}*${p.nombre}* (${p.tag}, ${p.medida}). ¿Me cuentas disponibilidad y precio?`),
+    productWa: (p, qty = 1) => waLink(`¡Hola ALAMBIC! Me interesa ${qty > 1 ? qty + " x " : ""}*${p.nombre}* (${p.tag}, ${p.medida}). ¿Me cuentas disponibilidad y precio?`),
   };
 
   document.addEventListener("DOMContentLoaded", () => {

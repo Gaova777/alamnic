@@ -31,7 +31,7 @@
             <h3>${e.nombre}</h3>
             <p>${e.desc}</p>
             ${e.disponible
-              ? `<a class="btn btn-gold btn-sm" href="${A.waLink(`¡Hola ALAMBIC! 🌿 Me interesa la experiencia *${e.nombre}*. ¿Me das más información?`)}" target="_blank" rel="noopener">Quiero saber más</a>`
+              ? `<a class="btn btn-gold btn-sm" href="${A.waLink(`¡Hola ALAMBIC! Me interesa la experiencia *${e.nombre}*. ¿Me das más información?`)}" target="_blank" rel="noopener">Quiero saber más</a>`
               : `<span class="exp-soon">Próximamente</span>`}
           </div>
         </article>`).join("");

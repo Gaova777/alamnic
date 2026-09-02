@@ -162,7 +162,7 @@ h1,h2,h3,h4{ font-family:var(--font-display); font-weight:600; line-height:1.08;
 .pillars{ display:grid; grid-template-columns:repeat(3,1fr); gap:26px; }
 .pillar{ background:linear-gradient(180deg,#FFFDF8,#F6EEDD); border:1px solid rgba(180,121,74,.16);
   border-radius:var(--radius); padding:36px 30px; box-shadow:var(--shadow-sm); transition:transform .5s var(--ease), box-shadow .5s var(--ease); }
-.pillar:hover{ transform:translateY(-3px); box-shadow:var(--shadow); }
+.pillar:hover{ transform:translateY(-6px); box-shadow:var(--shadow); }
 .pillar-ico{ font-size:2rem; width:64px; height:64px; border-radius:50%; display:grid; place-items:center; margin-bottom:18px;
   background:radial-gradient(circle at 30% 30%, rgba(224,190,106,.35), rgba(16,102,90,.15)); }
 .pillar h3{ font-size:1.5rem; color:var(--emerald-deep); margin-bottom:8px; }
@@ -204,7 +204,7 @@ h1,h2,h3,h4{ font-family:var(--font-display); font-weight:600; line-height:1.08;
 .exp-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:26px; }
 .exp-card{ border-radius:var(--radius); overflow:hidden; background:rgba(255,253,248,.04);
   border:1px solid rgba(224,190,106,.18); display:flex; flex-direction:column; transition:transform .5s var(--ease), box-shadow .5s var(--ease); }
-.exp-card:hover{ transform:translateY(-3px); box-shadow:var(--shadow); border-color:rgba(224,190,106,.4); }
+.exp-card:hover{ transform:translateY(-6px); box-shadow:var(--shadow); border-color:rgba(224,190,106,.4); }
 .exp-media{ aspect-ratio:16/11; overflow:hidden; }
 .exp-media img{ width:100%; height:100%; object-fit:cover; transition:transform .6s; }
 .exp-card:hover .exp-media img{ transform:scale(1.06); }
@@ -290,7 +290,7 @@ h1,h2,h3,h4{ font-family:var(--font-display); font-weight:600; line-height:1.08;
 .shop-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(270px,1fr)); gap:26px; }
 .pcard{ background:#FFFDF8; border-radius:var(--radius); overflow:hidden; border:1px solid rgba(180,121,74,.16);
   box-shadow:var(--shadow-sm); display:flex; flex-direction:column; transition:transform .5s var(--ease), box-shadow .5s var(--ease); }
-.pcard:hover{ transform:translateY(-3px); box-shadow:var(--shadow); }
+.pcard:hover{ transform:translateY(-6px); box-shadow:var(--shadow); }
 .pcard-media{ position:relative; aspect-ratio:1/1; cursor:pointer; overflow:hidden;
   background:radial-gradient(120% 100% at 50% 0%, rgba(233,211,160,.35), transparent 60%),linear-gradient(160deg,#efe0c6,#e7d3ad); }
 .pcard-media img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:transform .6s; }
