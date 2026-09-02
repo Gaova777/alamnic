@@ -160,12 +160,22 @@
       <a href="${waLink(baseMsg)}" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.2-1.8-.9-2-1s-.5-.2-.7.1-.8 1-1 1.2-.4.2-.7.1a8.2 8.2 0 0 1-2.4-1.5 9 9 0 0 1-1.7-2.1c-.2-.3 0-.5.1-.6l.5-.6.3-.5a.5.5 0 0 0 0-.5L8.7 6.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3A2.8 2.8 0 0 0 6 9a5 5 0 0 0 1 2.6 11.4 11.4 0 0 0 4.4 3.9c2 .9 2 .6 2.4.6a2.5 2.5 0 0 0 1.6-1.2 2 2 0 0 0 .2-1.1c-.1-.1-.3-.2-.6-.4z"/></svg></a>`;
     }
 
-    // Header scroll
+    // Header: transición progresiva al hacer scroll (suave, ligada al scroll)
     const header = $("#header");
     if (header) {
-      const onScroll = () => header.classList.toggle("solid", window.scrollY > 40);
-      onScroll();
-      window.addEventListener("scroll", onScroll, { passive: true });
+      let ticking = false;
+      const applyHeader = () => {
+        const p = Math.min(window.scrollY / 160, 1);
+        header.style.setProperty("--h-bg", (p * 0.92).toFixed(3));
+        header.style.setProperty("--h-blur", (p * 12).toFixed(2));
+        header.style.setProperty("--h-sh", (p * 0.8).toFixed(3));
+        header.style.setProperty("--h-veil", (1 - p).toFixed(3));
+        ticking = false;
+      };
+      applyHeader();
+      window.addEventListener("scroll", () => {
+        if (!ticking) { requestAnimationFrame(applyHeader); ticking = true; }
+      }, { passive: true });
     }
     // Nav móvil
     const nav = $("#navLinks");
@@ -186,28 +196,9 @@
     productWa: (p, qty = 1) => waLink(`¡Hola ALAMBIC! 🌿 Me interesa ${qty > 1 ? qty + " × " : ""}*${p.nombre}* (${p.tag}, ${p.medida}). ¿Me cuentas disponibilidad y precio?`),
   };
 
-  /* ---------- Transición suave entre páginas ---------- */
-  function initPageTransitions() {
-    if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    document.querySelectorAll("a[href]").forEach((a) => {
-      const href = a.getAttribute("href");
-      if (!href) return;
-      const isPage = href === "index.html" || href === "tienda.html" ||
-        /(^|\/)(index|tienda)\.html(\?|#|$)/.test(href);
-      if (!isPage || a.target === "_blank") return;
-      a.addEventListener("click", (e) => {
-        if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
-        e.preventDefault();
-        document.body.classList.add("leaving");
-        setTimeout(() => { window.location.href = href; }, 300);
-      });
-    });
-  }
-
   document.addEventListener("DOMContentLoaded", () => {
     initChrome();
     initDrawer();
     renderCart();
-    initPageTransitions();
   });
 })();
