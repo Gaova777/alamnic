@@ -9,8 +9,8 @@ window.ALAMBIC_DATA = {
   brand: {
     name: "ALAMBIC",
     tagline: "Recuerda tu esencia",
-    whatsapp: "573136887616",            // PRUEBAS · oficial: 573137485109 (+57 313 748 5109)
-    whatsappDisplay: "+57 313 688 7616",
+    whatsapp: "573137485109",            // Oficial +57 313 748 5109
+    whatsappDisplay: "+57 313 748 5109",
     instagram: "alambic_byaura",
     instagramUrl: "https://instagram.com/alambic_byaura",
     facebookUrl: "https://facebook.com/alambic_byaura",
