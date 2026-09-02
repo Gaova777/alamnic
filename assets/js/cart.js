@@ -186,9 +186,28 @@
     productWa: (p, qty = 1) => waLink(`¡Hola ALAMBIC! 🌿 Me interesa ${qty > 1 ? qty + " × " : ""}*${p.nombre}* (${p.tag}, ${p.medida}). ¿Me cuentas disponibilidad y precio?`),
   };
 
+  /* ---------- Transición suave entre páginas ---------- */
+  function initPageTransitions() {
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    document.querySelectorAll("a[href]").forEach((a) => {
+      const href = a.getAttribute("href");
+      if (!href) return;
+      const isPage = href === "index.html" || href === "tienda.html" ||
+        /(^|\/)(index|tienda)\.html(\?|#|$)/.test(href);
+      if (!isPage || a.target === "_blank") return;
+      a.addEventListener("click", (e) => {
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+        e.preventDefault();
+        document.body.classList.add("leaving");
+        setTimeout(() => { window.location.href = href; }, 300);
+      });
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", () => {
     initChrome();
     initDrawer();
     renderCart();
+    initPageTransitions();
   });
 })();
