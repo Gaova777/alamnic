@@ -22,9 +22,9 @@ assets/
   js/shop.js            Tienda
   fonts/                Zolina + Montserrat / Montserrat Alternates (woff2)
   img/logo/             Monograma, logotipo, íconos de marca, favicon
-  img/marca/            Fotografía de la guía visual
+  img/marca/            Fotografía de la guía visual y fotogramas del video
   img/productos/        Fotos de producto (webp, con el tratamiento de color de la marca)
-  img/fotos/            Fotos de Aura y experiencias
+  img/fotos/            Retrato de Aura
   video/hero.mp4        Video del alambique
 vercel.json             Configuración de Vercel (caché + URLs limpias)
 scripts/server.js       Servidor local para pruebas (no se despliega)

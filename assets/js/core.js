@@ -329,6 +329,22 @@
       window.addEventListener("scroll", onScroll, { passive: true });
     }
 
+    // Cambio de página suave: los navegadores con View Transitions lo hacen por CSS;
+    // en los demás se funde la página antes de salir
+    const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!("onpagereveal" in window) && !reduce) {
+      document.addEventListener("click", (e) => {
+        const a = e.target.closest("a[href]");
+        if (!a || a.target === "_blank" || e.defaultPrevented || e.button || e.metaKey || e.ctrlKey || e.shiftKey) return;
+        const url = new URL(a.href, location.href);
+        if (url.origin !== location.origin || url.pathname === location.pathname) return;
+        e.preventDefault();
+        document.body.classList.add("page-leaving");
+        setTimeout(() => (location.href = url.href), 280);
+      });
+      window.addEventListener("pageshow", () => document.body.classList.remove("page-leaving"));
+    }
+
     // Menú móvil
     const menu = $("#menu");
     $("#menuBtn")?.addEventListener("click", () => openPanel(menu));
