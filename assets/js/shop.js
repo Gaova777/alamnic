@@ -12,15 +12,12 @@
     const grid = $("#shopGrid");
 
     /* ---------- Grid por presentación ---------- */
-    function render(filter, shown = false) {
+    function render(filter) {
       const list = filter === "all" ? D.productos : D.productos.filter((p) => p.variantes.some((v) => v.id === filter));
       grid.innerHTML = list.map((p) => A.card(p, filter)).join("");
-      // Al cambiar de pestaña las tarjetas aparecen ya visibles (la transición se encarga del movimiento)
-      if (shown) $$(".pcard", grid).forEach((c) => c.classList.add("in"));
       A.observe?.();
       $("#shopCount").textContent = `${list.length} ${list.length === 1 ? "producto" : "productos"}`;
     }
-    const nameCards = (on) => $$(".pcard", grid).forEach((c) => (c.style.viewTransitionName = on ? `pc-${c.dataset.pid}` : ""));
     A.bindCards(grid);
 
     const filters = $("#shopFilters");
@@ -35,17 +32,8 @@
       $$(".filter", filters).forEach((f) => { f.classList.remove("active"); f.setAttribute("aria-pressed", "false"); });
       b.classList.add("active");
       b.setAttribute("aria-pressed", "true");
-      const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
-      if (document.startViewTransition && !reduce) {
-        // Cada tarjeta conserva su identidad: se desliza a su nueva posición, entra o sale con un fundido
-        document.documentElement.classList.add("vt-filter");
-        nameCards(true);
-        const t = document.startViewTransition(() => { render(b.dataset.filter, true); nameCards(true); });
-        t.finished.finally(() => { nameCards(false); document.documentElement.classList.remove("vt-filter"); });
-      } else {
-        grid.classList.add("fading");
-        setTimeout(() => { render(b.dataset.filter, true); grid.classList.remove("fading"); }, 180);
-      }
+      grid.classList.add("fading");
+      setTimeout(() => { render(b.dataset.filter); grid.classList.remove("fading"); }, 180);
     });
 
     /* ---------- Próximamente ---------- */

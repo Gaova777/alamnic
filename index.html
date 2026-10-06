@@ -14,9 +14,9 @@
 <link rel="apple-touch-icon" href="assets/img/logo/apple-touch-icon.png" />
 <link rel="preload" href="assets/fonts/zolina-regular.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="assets/fonts/montserrat-latin-var.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="stylesheet" href="assets/css/styles.css?v=2026.10b" />
+<link rel="stylesheet" href="assets/css/styles.css?v=2026.10" />
 </head>
-<body class="has-hero">
+<body>
 
 <!-- CABECERA -->
 <header class="header" id="header">
@@ -50,30 +50,30 @@
 <main>
 <!-- HERO -->
 <section class="hero" id="inicio">
-  <div class="hero-media" aria-hidden="true">
-    <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/img/marca/hero-poster.webp">
-      <source src="assets/video/hero.mp4" type="video/mp4" />
-    </video>
-  </div>
-  <div class="hero-veil" aria-hidden="true"></div>
-  <div class="container hero-inner">
+  <div class="container hero-grid">
     <div class="hero-copy">
-      <span class="eyebrow on-dark hero-in" style="--d:.05s">Aromaterapia artesanal · Roldanillo, Colombia</span>
+      <span class="eyebrow hero-in" style="--d:.05s">Aromaterapia artesanal · Roldanillo, Colombia</span>
       <h1 class="visually-hidden">Alambic by Aura Tomich</h1>
       <span class="mark mark-wordmark-byline hero-word hero-in" style="--d:.15s" role="img" aria-label="Alambic by Aura Tomich"></span>
       <p class="hero-tagline hero-in" style="--d:.3s">Recuerda tu esencia a través del poder de la naturaleza.</p>
       <p class="hero-sub hero-in" style="--d:.42s">Más que aceites esenciales: conocimiento y experiencias sensoriales para acompañarte en tu bienestar físico, emocional, mental y energético.</p>
       <div class="hero-cta hero-in" style="--d:.54s">
-        <a href="tienda.html" class="btn btn-light">Explorar productos</a>
-        <a href="#" class="btn btn-line-light js-wa">Escríbenos</a>
+        <a href="tienda.html" class="btn btn-dark">Explorar productos</a>
+        <a href="#" class="btn btn-line js-wa">Escríbenos</a>
       </div>
     </div>
-    <div class="hero-seal hero-in" style="--d:.7s" aria-hidden="true">
-      <svg viewBox="0 0 120 120" class="seal-ring"><defs><path id="sealPath" d="M60 60m-46 0a46 46 0 1 1 92 0a46 46 0 1 1-92 0"/></defs><text><textPath href="#sealPath" textLength="286" lengthAdjust="spacing">100% puro · destilación artesanal ·</textPath></text></svg>
-      <span class="mark mark-monogram"></span>
+    <div class="hero-visual hero-in" style="--d:.25s">
+      <div class="hero-arch">
+        <video class="hero-video" autoplay muted loop playsinline preload="metadata" aria-label="Alambique de cobre destilando">
+          <source src="assets/video/hero.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="hero-seal" aria-hidden="true">
+        <svg viewBox="0 0 120 120" class="seal-ring"><defs><path id="sealPath" d="M60 60m-46 0a46 46 0 1 1 92 0a46 46 0 1 1-92 0"/></defs><text><textPath href="#sealPath" textLength="286" lengthAdjust="spacing">100% puro · destilación artesanal ·</textPath></text></svg>
+        <span class="mark mark-monogram"></span>
+      </div>
     </div>
   </div>
-  <a href="#nosotros" class="scroll-cue" aria-label="Bajar a Nosotros"><span></span></a>
 </section>
 
 <!-- DESTACADOS (íconos de marca) -->
@@ -88,14 +88,15 @@
 </nav>
 
 <!-- MANIFIESTO -->
-<section class="section manifesto" id="nosotros">
+<section class="manifesto" id="nosotros">
+  <div class="manifesto-bg" aria-hidden="true"></div>
   <div class="container manifesto-grid">
-    <figure class="manifesto-media reveal">
-      <img src="assets/img/marca/nosotros-alambique.webp" alt="Alambique de cobre artesanal destilando plantas aromáticas" loading="lazy" width="1120" height="700" />
-      <figcaption>Destilamos en alambique de cobre artesanal</figcaption>
-    </figure>
+    <div class="manifesto-media reveal">
+      <img class="manifesto-photo" src="assets/img/marca/frascos.webp" alt="Aceites esenciales Alambic entre piedras y plantas" loading="lazy" />
+      <img class="manifesto-still" src="assets/img/marca/alambique.webp" alt="Alambique de cobre artesanal" loading="lazy" />
+    </div>
     <div class="manifesto-copy reveal">
-      <span class="eyebrow">Nuestra esencia</span>
+      <span class="eyebrow on-dark">Nuestra esencia</span>
       <h2>Transformaciones que no hacen ruido</h2>
       <p>ALAMBIC nace del encuentro entre la naturaleza y la esencia humana. Es un espacio donde el tiempo se vuelve más lento, la calma encuentra su lugar y cada detalle nos invita a volver a lo auténtico.</p>
       <p>Sus raíces habitan la tierra que nutre, crea y transforma; su alma, en aquello sutil que nos permite recordar quiénes somos. En ALAMBIC, la ciencia y la sensibilidad dialogan con armonía para dar vida a experiencias que despiertan los sentidos y abrazan el bienestar como un acto consciente.</p>
@@ -168,7 +169,7 @@
 <!-- IMAGOTIPO / MARCA -->
 <section class="brandband">
   <div class="brandband-media reveal">
-    <img src="assets/img/marca/tote.webp" alt="Bolso de tela con el logotipo de Alambic" loading="lazy" />
+    <img src="assets/img/marca/piedra.webp" alt="Tarjeta con el logotipo de Alambic sobre una piedra" loading="lazy" />
   </div>
   <div class="brandband-copy reveal">
     <span class="mark mark-monogram brandband-mark" aria-hidden="true"></span>
@@ -214,7 +215,7 @@
       <a href="#" class="social-item js-ig reveal" aria-label="Publicación: 5 hábitos que mejoran la regulación emocional"><img src="assets/img/marca/social-habitos.webp" alt="" loading="lazy" /></a>
       <a href="#" class="social-item js-ig reveal" aria-label="Publicación: tu calma no debería ser ruidosa"><img src="assets/img/marca/social-calma.webp" alt="" loading="lazy" /></a>
       <a href="#" class="social-item js-ig reveal" aria-label="Publicación: para qué es la aromaterapia"><img src="assets/img/marca/social-aromaterapia.webp" alt="" loading="lazy" /></a>
-      <a href="#" class="social-item js-ig reveal" aria-label="Papelería de Alambic"><img src="assets/img/marca/papeleria.webp" alt="" loading="lazy" /></a>
+      <a href="#" class="social-item js-ig reveal" aria-label="Bolso de tela Alambic"><img src="assets/img/marca/tote.webp" alt="" loading="lazy" /></a>
     </div>
   </div>
 </section>
@@ -337,8 +338,8 @@
   <span id="toastMsg">Añadido a tu selección</span>
 </div>
 
-<script src="assets/js/data.js?v=2026.10b"></script>
-<script src="assets/js/core.js?v=2026.10b"></script>
-<script src="assets/js/home.js?v=2026.10b"></script>
+<script src="assets/js/data.js?v=2026.10"></script>
+<script src="assets/js/core.js?v=2026.10"></script>
+<script src="assets/js/home.js?v=2026.10"></script>
 </body>
 </html>
