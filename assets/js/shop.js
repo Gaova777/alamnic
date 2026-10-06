@@ -23,7 +23,7 @@
         <div class="pcard-body">
           <div class="pcard-head">
             <h3>${p.nombre}</h3>
-            <span class="pcard-fam">${p.familia}</span>
+            <strong class="pcard-price">${A.money(p.precio)}</strong>
           </div>
           <span class="botanico">${p.botanico}</span>
           <p class="pcard-notas"><b>Notas:</b> ${p.notas}</p>
@@ -120,7 +120,7 @@
       $("#quickBody").innerHTML = `
         <div class="quick-media"><img src="${p.img}" alt="${p.nombre}" /></div>
         <div class="quick-info">
-          <span class="quick-tag">${p.tag} · ${p.medida}</span>
+          <span class="quick-tag">${p.tag} · ${p.medida} · ${A.money(p.precio)}</span>
           <h3>${p.nombre}</h3>
           <span class="botanico">${p.botanico}</span>
           <p class="quick-desc">${p.desc}</p>

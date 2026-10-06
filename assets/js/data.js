@@ -1,7 +1,7 @@
 /* ============================================================
    ALAMBIC · Datos del catálogo
    Editable: cambia textos, agrega productos o activa "próximamente".
-   Los precios están ocultos por decisión de marca (Consultar por WhatsApp).
+   Precios en pesos colombianos (catálogo 2025).
    ============================================================ */
 
 window.ALAMBIC_DATA = {
@@ -9,8 +9,8 @@ window.ALAMBIC_DATA = {
   brand: {
     name: "ALAMBIC",
     tagline: "Recuerda tu esencia",
-    whatsapp: "573137485109",            // Oficial +57 313 748 5109
-    whatsappDisplay: "+57 313 748 5109",
+    whatsapp: "573128416705",            // Oficial +57 312 841 6705
+    whatsappDisplay: "+57 312 841 6705",
     instagram: "alambic_byaura",
     instagramUrl: "https://instagram.com/alambic_byaura",
     facebookUrl: "https://facebook.com/alambic_byaura",
@@ -21,6 +21,7 @@ window.ALAMBIC_DATA = {
   aceites: [
     {
       id: "ace-romero",
+      precio: 40000,
       nombre: "Romero",
       botanico: "Rosmarinus officinalis",
       beneficio: "Claridad · Concentración",
@@ -34,6 +35,7 @@ window.ALAMBIC_DATA = {
     },
     {
       id: "ace-lavanda",
+      precio: 50000,
       nombre: "Lavanda",
       botanico: "Lavandula sp.",
       beneficio: "Calma · Descanso",
@@ -47,6 +49,7 @@ window.ALAMBIC_DATA = {
     },
     {
       id: "ace-citronella",
+      precio: 45000,
       nombre: "Citronella",
       botanico: "Cymbopogon nardus",
       beneficio: "Purificación · Serenidad",
@@ -60,6 +63,7 @@ window.ALAMBIC_DATA = {
     },
     {
       id: "ace-eucalipto",
+      precio: 45000,
       nombre: "Eucalipto",
       botanico: "Eucalyptus cinerea",
       beneficio: "Respiración · Frescura",
@@ -73,6 +77,7 @@ window.ALAMBIC_DATA = {
     },
     {
       id: "ace-naranja",
+      precio: 45000,
       nombre: "Naranja",
       botanico: "Citrus sinensis",
       beneficio: "Alegría · Optimismo",
@@ -90,6 +95,7 @@ window.ALAMBIC_DATA = {
   rollons: [
     {
       id: "roll-romero",
+      precio: 25000,
       nombre: "Roll-on Romero",
       botanico: "Rosmarinus officinalis",
       beneficio: "Claridad · Concentración",
@@ -103,6 +109,7 @@ window.ALAMBIC_DATA = {
     },
     {
       id: "roll-lavanda",
+      precio: 25000,
       nombre: "Roll-on Lavanda",
       botanico: "Lavandula sp.",
       beneficio: "Calma · Descanso",
@@ -116,6 +123,7 @@ window.ALAMBIC_DATA = {
     },
     {
       id: "roll-citronella",
+      precio: 25000,
       nombre: "Roll-on Citronella",
       botanico: "Cymbopogon nardus",
       beneficio: "Purificación · Serenidad",
@@ -129,6 +137,7 @@ window.ALAMBIC_DATA = {
     },
     {
       id: "roll-eucalipto",
+      precio: 25000,
       nombre: "Roll-on Eucalipto",
       botanico: "Eucalyptus cinerea",
       beneficio: "Respiración · Frescura",
@@ -142,6 +151,7 @@ window.ALAMBIC_DATA = {
     },
     {
       id: "roll-naranja",
+      precio: 25000,
       nombre: "Roll-on Naranja",
       botanico: "Citrus sinensis",
       beneficio: "Alegría · Optimismo",

@@ -15,6 +15,7 @@
     ...D.rollons.map((p) => ({ ...p, cat: "rollons", tag: "Roll-on" })),
   ];
   const findProduct = (id) => allProducts.find((p) => p.id === id);
+  const money = (n) => "$" + n.toLocaleString("es-CO");
 
   /* ---------- Estado ---------- */
   let cart = load();
@@ -98,7 +99,7 @@
         <img class="ci-img" src="${p.img}" alt="${p.nombre}" />
         <div class="ci-info">
           <h4>${p.nombre}</h4>
-          <div class="ci-meta">${p.tag} · ${p.medida}</div>
+          <div class="ci-meta">${p.tag} · ${p.medida} · ${money(p.precio * q)}</div>
           <div class="ci-qty">
             <button data-dec="${id}" aria-label="Quitar uno">−</button>
             <span>${q}</span>
@@ -133,9 +134,11 @@
       let msg = `¡Hola ALAMBIC! Quiero hacer un pedido:%0A%0A`;
       items.forEach(([id, q]) => {
         const p = findProduct(id);
-        if (p) msg += `• ${q} × ${p.nombre} (${p.tag}, ${p.medida})%0A`;
+        if (p) msg += `• ${q} × ${p.nombre} (${p.tag}, ${p.medida}) — ${money(p.precio * q)}%0A`;
       });
-      msg += `%0AQuedo atent@ para confirmar disponibilidad, precios y envío. ¡Gracias!`;
+      const total = items.reduce((s, [id, q]) => s + (findProduct(id)?.precio || 0) * q, 0);
+      msg += `%0ASubtotal: ${money(total)}%0A`;
+      msg += `%0AQuedo atent@ para confirmar disponibilidad, pago y envío. ¡Gracias!`;
       window.open(`https://wa.me/${WA}?text=${msg}`, "_blank");
     });
   }
@@ -191,9 +194,9 @@
 
   /* ---------- API pública ---------- */
   window.ALAMBIC = {
-    data: D, allProducts, findProduct, waLink,
+    data: D, allProducts, findProduct, waLink, money,
     add, setQty, renderCart,
-    productWa: (p, qty = 1) => waLink(`¡Hola ALAMBIC! Me interesa ${qty > 1 ? qty + " x " : ""}*${p.nombre}* (${p.tag}, ${p.medida}). ¿Me cuentas disponibilidad y precio?`),
+    productWa: (p, qty = 1) => waLink(`¡Hola ALAMBIC! Me interesa ${qty > 1 ? qty + " x " : ""}*${p.nombre}* (${p.tag}, ${p.medida}). ¿Me cuentas disponibilidad?`),
   };
 
   document.addEventListener("DOMContentLoaded", () => {

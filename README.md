@@ -7,7 +7,7 @@ Catálogo de aceites esenciales, roll-ons y experiencias, con **carrito y checko
 - **Tipografías:** Cormorant Garamond + Nunito Sans
 - **Hero:** montaje cinematográfico animado con fotos reales de la marca
 - **Sin dependencias / sin build:** HTML, CSS y JS estáticos → despliegue instantáneo en Vercel
-- **WhatsApp:** +57 313 748 5109 (`wa.me/573137485109`)
+- **WhatsApp:** +57 312 841 6705 (`wa.me/573128416705`)
 
 ## Estructura
 
