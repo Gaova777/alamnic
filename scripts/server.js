@@ -13,7 +13,6 @@ const TYPES = {
   ".png": "image/png", ".svg": "image/svg+xml",
   ".json": "application/json", ".ico": "image/x-icon",
   ".webp": "image/webp", ".mp4": "video/mp4",
-  ".woff2": "font/woff2",
 };
 
 http

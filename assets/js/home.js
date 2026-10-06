@@ -1,5 +1,5 @@
 /* ============================================================
-   ALAMBIC · Inicio (colección destacada, servicios, testimonios, FAQ)
+   ALAMBIC · Home (hero premium + secciones)
    ============================================================ */
 (function () {
   "use strict";
@@ -8,28 +8,31 @@
 
   document.addEventListener("DOMContentLoaded", () => {
     const A = window.ALAMBIC;
-    const D = A.data;
+    const D = window.ALAMBIC_DATA;
 
-    /* ---------- Colección destacada ---------- */
-    const feat = $("#featGrid");
+    /* ---------- Galería destacada (enlaza a la tienda) ---------- */
+    const feat = $("#featGallery");
     if (feat) {
-      feat.innerHTML = ["lavanda", "romero", "naranja"].map((id) => A.card(A.findProduct(id))).join("");
-      A.bindCards(feat);
+      const picks = [D.aceites[1], D.aceites[4], D.rollons[0], D.aceites[0]]; // lavanda, naranja, roll romero, romero
+      feat.innerHTML = picks.map((p) => `
+        <a class="feat-item" href="tienda.html">
+          <img src="${p.img}" alt="${p.nombre}" loading="lazy" />
+          <div class="feat-cap"><span>${p.tag}</span><strong>${p.nombre}</strong></div>
+        </a>`).join("");
     }
 
-    /* ---------- Servicios ---------- */
-    const srv = $("#srvGrid");
-    if (srv) {
-      srv.innerHTML = D.servicios.map((s, i) => `
-        <article class="srv reveal" style="transition-delay:${i * 90}ms">
-          <div class="srv-media"><img src="${s.img}" alt="${s.nombre}" loading="lazy" /></div>
-          <div class="srv-body">
-            <span class="srv-num">0${i + 1}</span>
-            <h3>${s.nombre}</h3>
-            <p>${s.desc}</p>
-            ${s.disponible
-              ? `<a class="link-arrow" href="${A.waLink(`¡Hola Alambic! Me interesa *${s.nombre}*. ¿Me cuentas más?`)}" target="_blank" rel="noopener">Quiero saber más</a>`
-              : `<span class="tag-soon">Próximamente</span>`}
+    /* ---------- Experiencias ---------- */
+    const exp = $("#expGrid");
+    if (exp) {
+      exp.innerHTML = D.experiencias.map((e) => `
+        <article class="exp-card">
+          <div class="exp-media"><img src="${e.img}" alt="${e.nombre}" loading="lazy" /></div>
+          <div class="exp-body">
+            <h3>${e.nombre}</h3>
+            <p>${e.desc}</p>
+            ${e.disponible
+              ? `<a class="btn btn-gold btn-sm" href="${A.waLink(`¡Hola ALAMBIC! Me interesa la experiencia *${e.nombre}*. ¿Me das más información?`)}" target="_blank" rel="noopener">Quiero saber más</a>`
+              : `<span class="exp-soon">Próximamente</span>`}
           </div>
         </article>`).join("");
     }
@@ -38,49 +41,55 @@
     const tst = $("#tstGrid");
     if (tst) {
       tst.innerHTML = D.testimonios.map((t) => `
-        <figure class="tst reveal">
-          <span class="tst-mark" aria-hidden="true">“</span>
-          <blockquote>${t.texto}</blockquote>
-          <figcaption>${t.autor} <span>· ${t.ciudad}</span></figcaption>
-        </figure>`).join("");
+        <blockquote class="tst">
+          <div class="stars">★★★★★</div>
+          <p>${t.texto}</p>
+          <div class="who">${t.autor} — ${t.ciudad}</div>
+        </blockquote>`).join("");
     }
 
     /* ---------- FAQ ---------- */
-    const faq = $("#faqList");
-    if (faq) {
-      faq.innerHTML = D.faq.map((f, i) => `
+    const faqList = $("#faqList");
+    if (faqList) {
+      faqList.innerHTML = D.faq.map((f) => `
         <div class="faq-item">
-          <button class="faq-q" aria-expanded="false" aria-controls="faq-a-${i}" id="faq-q-${i}">${f.q}<span class="plus" aria-hidden="true"></span></button>
-          <div class="faq-a" id="faq-a-${i}" role="region" aria-labelledby="faq-q-${i}"><p>${f.a}</p></div>
+          <button class="faq-q">${f.q}<span class="plus"></span></button>
+          <div class="faq-a"><p>${f.a}</p></div>
         </div>`).join("");
-      faq.addEventListener("click", (e) => {
-        const q = e.target.closest(".faq-q");
-        if (!q) return;
-        const item = q.parentElement;
-        const open = item.classList.contains("open");
-        $$(".faq-item", faq).forEach((i) => {
-          i.classList.remove("open");
-          $(".faq-q", i).setAttribute("aria-expanded", "false");
-          $(".faq-a", i).style.maxHeight = null;
+      $$(".faq-item").forEach((item) => {
+        const q = $(".faq-q", item);
+        const a = $(".faq-a", item);
+        q.addEventListener("click", () => {
+          const open = item.classList.contains("open");
+          $$(".faq-item").forEach((i) => { i.classList.remove("open"); $(".faq-a", i).style.maxHeight = null; });
+          if (!open) { item.classList.add("open"); a.style.maxHeight = a.scrollHeight + "px"; }
         });
-        if (!open) {
-          item.classList.add("open");
-          q.setAttribute("aria-expanded", "true");
-          const a = $(".faq-a", item);
-          a.style.maxHeight = a.scrollHeight + "px";
-        }
       });
     }
 
-    A.observe?.();
-
-    /* ---------- Video del hero: pausa fuera de pantalla ---------- */
-    const video = $(".hero-video");
-    if (video) {
-      if (matchMedia("(prefers-reduced-motion: reduce)").matches) { video.removeAttribute("autoplay"); video.pause(); }
-      else {
-        new IntersectionObserver(([e]) => (e.isIntersecting ? video.play().catch(() => {}) : video.pause())).observe(video);
+    /* ---------- Hero: motes de luz + parallax suave ---------- */
+    const motes = $("#heroMotes");
+    const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (motes && !reduce) {
+      for (let i = 0; i < 16; i++) {
+        const m = document.createElement("span");
+        m.className = "mote";
+        const size = 3 + Math.random() * 9;
+        m.style.left = Math.random() * 100 + "%";
+        m.style.width = m.style.height = size + "px";
+        m.style.animationDuration = 11 + Math.random() * 15 + "s";
+        m.style.animationDelay = -Math.random() * 22 + "s";
+        m.style.opacity = 0.25 + Math.random() * 0.5;
+        motes.appendChild(m);
       }
+    }
+    // Parallax del marco del hero
+    const frame = $("#heroFrame");
+    if (frame && !reduce) {
+      window.addEventListener("scroll", () => {
+        const y = window.scrollY;
+        if (y < 900) frame.style.transform = `translateY(${y * 0.06}px)`;
+      }, { passive: true });
     }
   });
 })();
