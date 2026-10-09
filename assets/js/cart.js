@@ -182,8 +182,15 @@
     }
     // Nav móvil
     const nav = $("#navLinks");
-    $("#hamburger")?.addEventListener("click", () => nav?.classList.toggle("open"));
-    $$("#navLinks a").forEach((a) => a.addEventListener("click", () => nav?.classList.remove("open")));
+    const burger = $("#hamburger");
+    const setMenu = (open) => {
+      nav?.classList.toggle("open", open);
+      burger?.setAttribute("aria-expanded", String(open));
+      burger?.setAttribute("aria-label", open ? "Cerrar menú" : "Menú");
+    };
+    burger?.addEventListener("click", () => setMenu(!nav?.classList.contains("open")));
+    $$("#navLinks a").forEach((a) => a.addEventListener("click", () => setMenu(false)));
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") setMenu(false); });
 
     // Reveal
     const io = new IntersectionObserver((es) => {
