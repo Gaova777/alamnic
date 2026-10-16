@@ -223,8 +223,8 @@ window.ALAMBIC_DATA = {
   // --- Preguntas frecuentes ---
   faq: [
     {
-      q: "¿Puedo usar los aceites esenciales directamente sobre la piel?",
-      a: "Los aceites esenciales 100 % puros deben diluirse antes de aplicarlos sobre la piel. Si buscas una opción lista para usar, nuestros roll-on ya vienen diluidos en aceite vegetal y son aptos para aplicación tópica.",
+      q: "¿Puedo usar los aceites esenciales (AE) directamente sobre la piel?",
+      a: "Los AE 100% puros no. Estos deben diluirse antes de aplicarlos sobre la piel. Si buscas una opción lista para usar, nuestros roll-on ya vienen diluidos en aceite vegetal y son aptos para aplicación tópica.",
     },
     {
       q: "¿Puedo consumir los aceites esenciales?",
