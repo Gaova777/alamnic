@@ -177,8 +177,12 @@ h1,h2,h3,h4{ font-family:var(--font-display); font-weight:600; line-height:1.08;
 .pillar{ background:linear-gradient(180deg,#FFFDF8,#F6EEDD); border:1px solid rgba(180,121,74,.16);
   border-radius:var(--radius); padding:36px 30px; box-shadow:var(--shadow-sm); transition:transform .5s var(--ease), box-shadow .5s var(--ease); }
 .pillar:hover{ transform:translateY(-6px); box-shadow:var(--shadow); }
-.pillar-ico{ font-size:2rem; width:64px; height:64px; border-radius:50%; display:grid; place-items:center; margin-bottom:18px;
-  background:radial-gradient(circle at 30% 30%, rgba(224,190,106,.35), rgba(16,102,90,.15)); }
+/* Medallón fotográfico: foto real de marca, filete crema y aro dorado fino */
+.pillar-ico{ width:92px; height:92px; border-radius:50%; overflow:hidden; margin-bottom:22px; background:#E6DCC6;
+  box-shadow:0 0 0 3px #FBF6EC, 0 0 0 4px rgba(201,162,39,.75), 0 16px 32px -16px rgba(20,12,6,.55); }
+.pillar-ico img{ width:100%; height:100%; object-fit:cover; display:block;
+  filter:saturate(.9) contrast(1.04) sepia(.08); transform:scale(1.02); transition:transform .9s var(--ease), filter .9s var(--ease); }
+.pillar:hover .pillar-ico img{ transform:scale(1.09); filter:saturate(1) contrast(1.06) sepia(0); }
 .pillar h3{ font-size:1.5rem; color:var(--emerald-deep); margin-bottom:8px; }
 .pillar p{ color:var(--ink-soft); font-size:1rem; }
 .split{ display:grid; grid-template-columns:1.05fr 1fr; gap:clamp(30px,5vw,64px); align-items:center; margin-top:clamp(60px,8vw,100px); }
